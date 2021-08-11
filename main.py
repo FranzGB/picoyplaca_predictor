@@ -1,6 +1,7 @@
 import sys
 import utils
-#Pico y Placa" predictor. The inputs should be a license plate number (the full number, not the last digit), a date (as a String), 
+
+# Pico y Placa" predictor. The inputs should be a license plate number (the full number, not the last digit), a date (as a String), 
 # and a time, and the program will return whether or not that car can be on the road. 
 # You may use any input and output method you prefer.
 
@@ -16,12 +17,18 @@ import utils
 #current_date = Date('01/01/1111','00:00')
 
 def main():
-    mycar = utils.Car(sys.argv[1])
-    mydate = utils.Date(sys.argv[2],sys.argv[3])
-    
-    if(utils.evaluate_car(mycar,mydate)):
-        print('The car with license plate '+ mycar.license_plate + 'can be on the road right now' )
+    if len(sys.argv) < 3:
+        my_car = Car(input("Enter the license plate of the car"))
+        d,t = input("Enter the date in format MM/DD/YYYY"), input("Enter the time in format HH:MM")
+        my_date = Date(d,t)
+  
     else:
-        print('The car with license plate '+ mycar.license_plate + 'can not be on the road. You should wait until ``pico y placa´´ has no effect.')
+        my_car = utils.Car(sys.argv[1])
+        my_date = utils.Date(sys.argv[2],sys.argv[3])
+        
+    if(utils.evaluate_car(my_car,my_date)):
+        print('The car with license plate '+ my_car.license_plate + ' can be on the road right now' )
+    else:
+        print('The car with license plate '+ my_car.license_plate + ' can not be on the road. You should wait until ``pico y placa´´ has no effect.')     
    
 main()

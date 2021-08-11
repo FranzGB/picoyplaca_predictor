@@ -2,7 +2,7 @@ import datetime
 
 
 class Car:
-    '''This is a car class'''   
+    '''This is a car class. It holds the entire license plate string.'''   
     def __init__(self,var):
         self.license_plate = var
     
