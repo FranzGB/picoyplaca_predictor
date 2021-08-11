@@ -18,6 +18,10 @@ import utils
 def main():
     mycar = utils.Car(sys.argv[1])
     mydate = utils.Date(sys.argv[2],sys.argv[3])
-    print(1)
+    
+    if(utils.evaluate_car(mycar,mydate)):
+        print('The car with license plate '+ mycar.license_plate + 'can be on the road right now' )
+    else:
+        print('The car with license plate '+ mycar.license_plate + 'can not be on the road. You should wait until ``pico y placa´´ has no effect.')
    
 main()
