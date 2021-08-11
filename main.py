@@ -18,17 +18,17 @@ import utils
 
 def main():
     if len(sys.argv) < 3:
-        my_car = Car(input("Enter the license plate of the car"))
-        d,t = input("Enter the date in format MM/DD/YYYY"), input("Enter the time in format HH:MM")
-        my_date = Date(d,t)
+        my_car = utils.Car(input("Enter the license plate of the car "))
+        d,t = input("Enter the date in format MM/DD/YYYY "), input("Enter the time in format HH:MM ")
+        my_date = utils.Date(d,t)
   
     else:
         my_car = utils.Car(sys.argv[1])
         my_date = utils.Date(sys.argv[2],sys.argv[3])
         
     if(utils.evaluate_car(my_car,my_date)):
-        print('The car with license plate '+ my_car.license_plate + ' can be on the road right now' )
+        print('The car with license plate '+ my_car.license_plate + ' can be on the road right now. Today is ' + my_date.get_weekdayname())
     else:
-        print('The car with license plate '+ my_car.license_plate + ' can not be on the road. You should wait until ``pico y placa´´ has no effect.')     
+        print('The car with license plate '+ my_car.license_plate + ' can not be on the road. You should wait. Today is ' + my_date.get_weekdayname())     
    
 main()

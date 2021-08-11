@@ -34,7 +34,16 @@ class Date:
         current_time = datetime.time(int(split_time[0]),int(split_time[1]))
         return( (ON_TIME_1 <= current_time <= OFF_TIME_1) or (ON_TIME_2 <= current_time <= OFF_TIME_2))
 
-  
+    def get_weekdayname(self):
+        weekdays={ 1: 'Monday',
+        2: 'Tuesday',
+        3: 'Wednesday',
+        4: 'Thursday',
+        5: 'Friday',
+        6: 'Saturday',
+        7: 'Sunday'
+        }
+        return(weekdays[datetime.datetime.strptime(self.date, '%m/%d/%Y').weekday()])
 
 
 def evaluate_car(car,date):
