@@ -50,7 +50,23 @@ def evaluate_car(car,date):
     -Friday: Cars which it's license plate last digit is 9 or 0.
     '''
     lastdigit = car.get_lastdigit()
-    
-    #First let us check if the rule applies on the time range
-    #if
+    lastdigit = int(lastdigit)
+
+    #First let us check if the rule applies on the time range:
+    if (not date.is_in_between()):
+        return True
+    else:
+        #If not then we should check if the rules apply to that car in that day.
+        if(date.get_weekday()==1 and lastdigit in (1,2) ):
+            return False
+        elif(date.get_weekday()==2 and lastdigit in (3,4)):
+            return False
+        elif(date.get_weekday()==3 and lastdigit in (5,6)):
+            return False
+        elif(date.get_weekday()==4 and lastdigit in (7,8)):
+            return False
+        elif(date.get_weekday()==5 and lastdigit in (9,0)):
+            return False
+        else:
+            return True
     
