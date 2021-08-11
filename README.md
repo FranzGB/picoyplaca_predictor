@@ -5,7 +5,7 @@ To test this program you should run the folowing command on the terminal:
 ```
 python main.py [license_plate string] [MM/DD/YYYY] [HH:MM]
 ```
-You can also run it without arguments. The will requiere that you input manually via console.
+You can also run it without arguments. The program will requiere that you input the paramaters manually via console.
 ```
 python main.py
 ```
