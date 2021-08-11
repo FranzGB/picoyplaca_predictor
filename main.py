@@ -6,17 +6,8 @@ import utils
 # You may use any input and output method you prefer.
 
 
-    
-    
-#Create a new object of Date class
-#rojo = Car("PBY-0168")
-
-
-
-#Create a new object of Date class
-#current_date = Date('01/01/1111','00:00')
-
 def main():
+    #Check if the OS have passed all the parameters.
     if len(sys.argv) < 3:
         my_car = utils.Car(input("Enter the license plate of the car "))
         d,t = input("Enter the date in format MM/DD/YYYY "), input("Enter the time in format HH:MM ")
@@ -25,10 +16,13 @@ def main():
     else:
         my_car = utils.Car(sys.argv[1])
         my_date = utils.Date(sys.argv[2],sys.argv[3])
-        
-    if(utils.evaluate_car(my_car,my_date)):
+    #Initialize predictor object
+    predictor = utils.Predictor()
+    #Output:
+    if(predictor.evaluate_car(my_car,my_date)):
         print('The car with license plate '+ my_car.license_plate + ' can be on the road right now. Today is ' + my_date.get_weekdayname())
     else:
         print('The car with license plate '+ my_car.license_plate + ' can not be on the road. You should wait. Today is ' + my_date.get_weekdayname())     
    
-main()
+if __name__ == '__main__':
+    main()
