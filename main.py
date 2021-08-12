@@ -20,9 +20,9 @@ def main():
     predictor = utils.Predictor()
     #Output:
     if(predictor.evaluate_car(my_car,my_date)):
-        print('The car with license plate '+ my_car.license_plate + ' can be on the road right now. Today is ' + my_date.get_weekdayname())
+        print('The car with license plate '+ my_car.license_plate + ' can be on the road right now.')
     else:
-        print('The car with license plate '+ my_car.license_plate + ' can not be on the road. You should wait. Today is ' + my_date.get_weekdayname())     
+        print('The car with license plate '+ my_car.license_plate + ' can not be on the road. You should wait.' )     
    
 if __name__ == '__main__':
     main()
