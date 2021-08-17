@@ -45,7 +45,7 @@ class Date:
         5: 'Saturday',
         6: 'Sunday'
         }
-        return(weekdays[datetime.datetime.strptime(self.date, '%m/%d/%Y').weekday()])
+        return(weekdays[self.get_weekday(self.date)])
 
 
 
